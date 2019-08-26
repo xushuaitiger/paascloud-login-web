@@ -86,7 +86,8 @@
           this.getImage();
           if (res && res.code === 200) {
             this.$store.dispatch('update_auth_token', res.result);
-            window.location.href = this.redirectUri;
+            console.log(res.result);
+            // window.location.href = this.redirectUri;
           }
         }).catch((err) => {
           console.log(err);
@@ -121,10 +122,10 @@
           result.msg = '密码不能为空';
           return result;
         }
-        if (!this.validate(this.loginForm.captchaCode, 'require')) {
-          result.msg = '验证码不能为空';
-          return result;
-        }
+        // if (!this.validate(this.loginForm.captchaCode, 'require')) {
+          // result.msg = '验证码不能为空';
+          // return result;
+        // }
         // 通过验证，返回正确提示
         result.status = true;
         result.msg = '验证通过';
