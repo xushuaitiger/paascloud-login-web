@@ -11,7 +11,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/uac': {
-        target: 'http://dev-api.paascloud.net:7979/',
+        target: 'http://localhost:7979/',
         changeOrigin: true,
         pathRewrite: {
           '^/uac': '/uac'
@@ -20,7 +20,7 @@ module.exports = {
     },
 
     // Various Dev Server settings
-    host: 'dev-login.paascloud.net', // can be overwritten by process.env.HOST
+    host: 'localhost', // can be overwritten by process.env.HOST
     port: 80, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
