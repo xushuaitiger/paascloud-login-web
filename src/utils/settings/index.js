@@ -1,8 +1,8 @@
 const gbs = {
-  host: 'http://paascloud.net',
+  host: 'http://localhost',
   lockr_prefix: 'PASSCLOUD_PAAS_',
   secret_key: '^#rwd6Ffz$X5alRN',
-  domain: '.paascloud.net',
+  domain: '',
   secret: {
     key_str: '^#rwd6Ffz$X5alRN',
     iv_str: '^#rwd6Ffz$X5alRN'
@@ -11,9 +11,9 @@ const gbs = {
 const cbs = {};
 
 if (process.env.NODE_ENV === 'production') {
-  gbs.domain = '.paascloud.net';
+  gbs.domain = '';
 } else {
-  gbs.domain = '.paascloud.net';
+  gbs.domain = '';
   gbs.lockr_prefix += 'DEV_';
 }
 
