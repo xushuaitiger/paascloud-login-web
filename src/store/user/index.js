@@ -32,6 +32,7 @@ const getters = {
     if (!state.authToken) {
       state.authToken = PcCookie.get(enums.USER.AUTH_TOKEN) ? JSON.parse(PcCookie.get(enums.USER.AUTH_TOKEN)) : {};
     }
+	alert(state.authToken.access_token);
     return state.authToken.access_token;
   },
   getAuthToken: (state) => {
