@@ -32,7 +32,6 @@ const getters = {
     if (!state.authToken) {
       state.authToken = PcCookie.get(enums.USER.AUTH_TOKEN) ? JSON.parse(PcCookie.get(enums.USER.AUTH_TOKEN)) : {};
     }
-	alert(state.authToken.access_token);
     return state.authToken.access_token;
   },
   getAuthToken: (state) => {
@@ -148,7 +147,7 @@ const actions = {
     if (!state.authToken || state.authToken.access_token === '') {
       state.authToken = PcCookie.get(enums.USER.AUTH_TOKEN) ? JSON.parse(PcCookie.get(enums.USER.AUTH_TOKEN)) : {};
     }
-    console.info('refresh_token:', state.authToken.refresh_token);
+    // alert('refresh_token:', state.authToken.refresh_token);
     if (state.authToken.access_token) {
       // 判断是否需要续租
       if ((new Date().getTime() - state.authToken.timestamp) > 100 * 60 * 1000) {
@@ -193,9 +192,9 @@ const actions = {
 
 function jumpLoginPage () {
   if (process.env.NODE_ENV === 'production') {
-    window.location.href = 'http://login.paascloud.net/login';
+    window.location.href = 'http://localhost:81/login';
   } else {
-    window.location.href = 'http://dev-login.paascloud.net/login';
+    window.location.href = 'http://localhost:81/login';
   }
 }
 
